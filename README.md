@@ -1,7 +1,14 @@
-# 🚢 Análise Exploratória — Titanic
+import os
+
+
+notebook_url = "https://colab.research.google.com/github/SEU_USUARIO/analise-titanic/blob/main/titanic_analysis.ipynb"
+
+readme = """# 🚢 Análise Exploratória — Titanic
 
 Exploração dos dados do Titanic buscando padrões entre quem sobreviveu e quem não sobreviveu.
 Cresci assistindo o filme e sempre quis entender se os dados confirmam o que aparece na tela — confirmam.
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]({})
 
 ## O que os dados mostram
 
@@ -18,10 +25,16 @@ Cresci assistindo o filme e sempre quis entender se os dados confirmam o que apa
 
 ## Como rodar
 
-1. Abra o notebook no Google Colab pelo link abaixo
+1. Clique no badge **Open in Colab** acima
 2. Vá em `Runtime > Run all`
 3. Os gráficos e a imagem são gerados automaticamente
 
 ## Resultado
 
 ![Gráficos da análise](titanic_analise.png)
+""".format(notebook_url)
+
+with open('/content/README.md', 'w', encoding='utf-8') as f:
+    f.write(readme)
+
+print("README atualizado!")
